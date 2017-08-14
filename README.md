@@ -3,6 +3,11 @@
 
 - Text to Speech
   - Using Polly to generate speech
+    - [ ] text-retrieving
+    - [x] mp3 auto-concatenation
+    - [ ] AWS Polly api auto transfering
+    - [ ] build files
+    - [ ] web integration
   - Using Lyrebird api to clone voice / Build own deep learning network to tunning the voice.
 - CV
   - CV parsering
