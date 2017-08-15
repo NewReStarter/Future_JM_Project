@@ -6,7 +6,7 @@
     - [x] text-retrieving
     - [x] mp3 auto-concatenation
     - [x] AWS authentication
-    - [ ] AWS Polly SDK auto transfering
+    - [x] AWS Polly SDK auto transfering
     - [ ] build files
     - [ ] web integration
   - Using Lyrebird api to clone voice / Build own deep learning network to tunning the voice.
