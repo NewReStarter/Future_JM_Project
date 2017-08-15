@@ -5,7 +5,7 @@
   - Using Polly to generate speech
     - [ ] text-retrieving
     - [x] mp3 auto-concatenation
-    - [ ] AWS authentication
+    - [x] AWS authentication
     - [ ] AWS Polly SDK auto transfering
     - [ ] build files
     - [ ] web integration
