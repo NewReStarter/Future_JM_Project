@@ -9,6 +9,7 @@
     - [x] AWS Polly SDK auto transfering
     - [ ] build files
     - [ ] web integration
+       -pack API in aws or compile to Binary exe and put inside the package.
   - Using Lyrebird api to clone voice / Build own deep learning network to tunning the voice.
 - CV
   - CV parsering
