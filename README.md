@@ -3,7 +3,7 @@
 
 - Text to Speech
   - Using Polly to generate speech
-    - [x] text-retrieving
+    - ~~[x] text-retrieving~~
     - [x] mp3 auto-concatenation
     - [x] AWS authentication
     - [x] AWS Polly SDK auto transfering
