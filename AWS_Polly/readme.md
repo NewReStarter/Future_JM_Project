@@ -2,11 +2,22 @@
 
 ### Version 1.0
 Fully implemented *GET Method* to retrieve text from certain webpage submitted via url.(By default it is JLB website).
+The instance's public DNS is ec2-34-210-46-14.us-west-2.compute.amazonaws.com
+You can get corressponding audio's S3 address via ec2-34-210-46-14.us-west-2.compute.amazonaws.com/<blog_id>.
+e.g.
+ec2-34-210-46-14.us-west-2.compute.amazonaws.com/18 will return you the audio files of http://jlb.jhrnet.com/index.cfm/blog/18
 
 ### Dependencies
 This project depends on ffmpeg due to the use of *[pydub](https://getithub.com/jiaaro/pydub)*. WAV files can be saved with pure python. Other audio files may require ffmpeg to open.
 
 ### Setup
+After setup the server properly
+```
+sudo apt-get install ffmpeg
+sudo pip3 install requirements.txt
+```
+to install all the packages needed.
+
 Using **Flask** framework, a **Apache2** framework is recommended to setup the script. **mod-wsgi** module is also needed, while it is enabled as default. 
 For Apache2 runs the scripts with another user, **www-data** should obtain the read/write authorization.
 ``` bash
