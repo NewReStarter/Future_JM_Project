@@ -111,7 +111,6 @@ $ sudo nano flaskapp.wsgi
 ```
 Add the following code to the flaskapp.wsgi file stated in the above file.
 ```python
-#!/usr/bin/python
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
