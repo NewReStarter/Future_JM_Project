@@ -130,7 +130,7 @@ Then it is accessible via public DNS.
 #### FYI:
 to debug
 ```Linux Kernel Module
-$ cd /var/log/apache2/error.log
+$ nano /var/log/apache2/error.log
 ```
 The log is sorted by time asc.
 
