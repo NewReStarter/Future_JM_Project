@@ -3,8 +3,11 @@
 ### Version 1.0
 Fully implemented *GET Method* to retrieve text from certain webpage submitted via url.(By default it is JLB website).
 The instance's public DNS is ec2-34-210-46-14.us-west-2.compute.amazonaws.com
+
 You can get corressponding audio's S3 address via ec2-34-210-46-14.us-west-2.compute.amazonaws.com/<blog_id>.
+
 e.g.
+
 ec2-34-210-46-14.us-west-2.compute.amazonaws.com/18 will return you the audio files of http://jlb.jhrnet.com/index.cfm/blog/18
 
 ### Dependencies
