@@ -35,9 +35,9 @@ def get_audio(blog_id):
 	for item in soup.find_all('p'):
 		content.append(item.text)
 	playlist = []
-	polly = boto3.client('polly', region_name='us-west-2',
-		aws_access_key_id='AKIAJRZX7N4QPIM65U6A',
-		aws_secret_access_key='CWJZOOnUo/jCPyELB03tYDSlwjYdWmIMq6Dcq9r6')
+	polly = boto3.client('polly', region_name='YOUR_REGION',
+		aws_access_key_id='YOUR_AWS_ACCESS_KEY',
+		aws_secret_access_key='YOUR_SECRET_ACCESS_KEY')
 	length = len(content)
 	count = 1
 	for item in content:
@@ -67,9 +67,9 @@ def get_audio(blog_id):
 	for i in range(1,count):
 		dele_path='/var/www/FlaskApp/FlaskApp/speech'+str(blog_id)+str(i)+'.mp3'
 		os.remove(dele_path)
-	s3 = boto3.resource('s3',region_name='us-west-2',
-		aws_access_key_id='AKIAJRZX7N4QPIM65U6A',
-		aws_secret_access_key='CWJZOOnUo/jCPyELB03tYDSlwjYdWmIMq6Dcq9r6')
+	s3 = boto3.resource('s3',region_name='YOUR_REGION',
+		aws_access_key_id='YOUR_ACCESS_KEY',
+		aws_secret_access_key='YOUR_SECRET_ACCESS_KEY')
 	output = 'mp3/'+str(blog_id)+'.mp3'
 	s3.meta.client.upload_file(path, 'speechsoundstorage', output)
 	fileObj = s3.ObjectAcl('speechsoundstorage',output)
