@@ -8,9 +8,11 @@ This project is mainly built to solve the constraint of AWS Polly's limited char
 ### Version 1.1 Updated on Aug 25th, 2017
 Implement *POST Method* of transfering giving text to an audio file. This method will return an AWS S3 address that stores the audio file. Request's Content-type should be application/json and the body data format are given as follows.
 ```json
-{"name":"example",
+{
+ "name":"example",
  "text":"The text you would like to transfer",
- "VoiceId":"Amy"}
+ "VoiceId":"Amy"
+ }
 ```
 The first two key is required while the last one "VoiceId" is optional. Default VoiceId will be "Russell". To see more VoiceId, see [Available Voices](http://docs.aws.amazon.com/polly/latest/dg/voicelist.html) or use command 
 `<aws polly describe-voices>` after installing AWS Command Line Interface.
