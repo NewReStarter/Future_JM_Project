@@ -1,7 +1,27 @@
-# Polly auto transfer API
+# Polly auto Text-to-Speech API
+
+### Introduction
+This project is mainly built to solve the constraint of AWS Polly's limited character input that only allows no more than 1600 chars at a time. This project is an experiment for future integration of AWS service.
+
+-----------
+
+### Version 1.1 Updated on Aug 25th, 2017
+Implement *POST Method* of transfering giving text to an audio file. This method will return an AWS S3 address that stores the audio file. Request's Content-type should be application/json and the body data format are given as follows.
+```json
+{"name":"example",
+ "text":"The text you would like to transfer",
+ "VoiceId":"Amy"}
+```
+The first two key is required while the last one "VoiceId" is optional. Default VoiceId will be "Russell". To see more VoiceId, see [Available Voices](http://docs.aws.amazon.com/polly/latest/dg/voicelist.html) or use command 
+`<aws polly describe-voices>` after installing AWS Command Line Interface.
+
+Example of request sent by curl
+```
+curl -H "Content-type: application/json" -X POST ec2-34-210-46-14.us-west-2.compute.amazonaws.com/audio -d '{"name":"audio1","text":"I want to have a test"}'
+```
 
 ### Version 1.0
-Fully implemented *GET Method* to retrieve text from certain webpage submitted via url.(By default it is JLB website).
+Implemente *GET Method* to retrieve text from certain webpage submitted via url.(By default it is JLB website).
 The instance's public DNS is ec2-34-210-46-14.us-west-2.compute.amazonaws.com
 
 You can get corressponding audio's S3 address via ec2-34-210-46-14.us-west-2.compute.amazonaws.com/<blog_id>.
@@ -10,10 +30,19 @@ e.g.
 
 ec2-34-210-46-14.us-west-2.compute.amazonaws.com/18 will return you the audio files of http://jlb.jhrnet.com/index.cfm/blog/18
 
+---------
+
 ### Dependencies
-This project depends on ffmpeg due to the use of *[pydub](https://getithub.com/jiaaro/pydub)*. WAV files can be saved with pure python. Other audio files may require ffmpeg to open.
+This project depends on ffmpeg due to the use of *[pydub](https://getithub.com/jiaaro/pydub)*. WAV files can be saved with pure python. Other audio files may require ffmpeg to open. 
+
+---------
 
 ### Setup
+You will need an AWS account to use the "Polly" Text-to-Speech service provided by the AWS. You should obtain your own **aws_access_key_id** and **aws_secret_access_key** to replace the variables in the script(display as **YOUR_ACCESS_KEY_ID** and **YOUR_SECRET_ACCESS_KEY**). These two key can be obtained via the following process. If you run the script on your own ubuntu instance or whatever, you should change the return addess to your own public DNS as well.
+
+AWS -> Move the cursor to My Account -> Security Credentials -> Access Keys (Access Key ID and Secret Access Key)
+
+
 After setup the server properly
 ```
 sudo apt-get install ffmpeg
@@ -28,6 +57,7 @@ chmod -R 777 /var/www/
 ```
 is not recommended but useful.
 
+--------------
 
 ### Steps to setup apache2 mod-wsgi
 
@@ -135,6 +165,8 @@ to debug
 $ nano /var/log/apache2/error.log
 ```
 The log is sorted by time asc.
+
+-------------
 
 ### Reference
 [Flask Doc 0.12](http://flask.pocoo.org/docs/0.12/)
