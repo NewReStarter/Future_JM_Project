@@ -14,10 +14,10 @@ Implement *POST Method* of transfering giving text to an audio file. This method
  "VoiceId":"Amy"
  }
 ```
-The first two key is required while the last one "VoiceId" is optional. Default VoiceId will be "Russell". To see more VoiceId, see [Available Voices](http://docs.aws.amazon.com/polly/latest/dg/voicelist.html) or use command 
+The first two key is required while the last one "VoiceId" is optional. Default VoiceId will be "Russell". To see more VoiceId choices, see [Available Voices](http://docs.aws.amazon.com/polly/latest/dg/voicelist.html) or use command 
 `<aws polly describe-voices>` after installing AWS Command Line Interface.
 
-Example of request sent by curl
+Example of request sent by curl:
 ```
 curl -H "Content-type: application/json" -X POST ec2-34-210-46-14.us-west-2.compute.amazonaws.com/audio -d '{"name":"audio1","text":"I want to have a test"}'
 ```
@@ -40,7 +40,7 @@ This project depends on ffmpeg due to the use of *[pydub](https://getithub.com/j
 ---------
 
 ### Setup
-You will need an AWS account to use the "Polly" Text-to-Speech service provided by the AWS. You should obtain your own **aws_access_key_id** and **aws_secret_access_key** to replace the variables in the script(display as **YOUR_ACCESS_KEY_ID** and **YOUR_SECRET_ACCESS_KEY**). These two key can be obtained via the following process. If you run the script on your own ubuntu instance or whatever, you should change the return addess to your own public DNS as well.
+You will need an AWS account to use the *"Amazon Polly"* Text-to-Speech service provided by the AWS. You should obtain your own  **aws_access_key_id**  and  **aws_secret_access_key**  to replace the variables in the script(display as **YOUR_ACCESS_KEY_ID** and  **YOUR_SECRET_ACCESS_KEY** ). These two key can be obtained via the following process. If you run the script on your own ubuntu instance or whatever, you should change the return addess to your own public DNS as well.
 
 AWS -> Move the cursor to My Account -> Security Credentials -> Access Keys (Access Key ID and Secret Access Key)
 
