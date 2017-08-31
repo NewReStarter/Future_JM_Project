@@ -5,6 +5,21 @@ This project is mainly built to solve the constraint of AWS Polly's limited char
 
 -----------
 
+### Version 1.2 Updated on Aug 31st, 2017
+* Fix the bug of selecting personal information part in the GET method
+* Enhance the comment to note the direction url
+* Add a POST allow user to state url and id of <div> if wanted, the json format is:
+
+``` json
+{
+  "name":"example"
+  "blog_id":"18"
+  "url":"www.google.com"
+  "div_id":"passage-content"
+}
+```
+If you want to access devcloud's JLB, do not input url, use id of blog instead, else input url.
+
 ### Version 1.1 Updated on Aug 25th, 2017
 Implement *POST Method* of transfering giving text to an audio file. This method will return an AWS S3 address that stores the audio file. Request's Content-type should be application/json and the body data format are given as follows.
 ```json
