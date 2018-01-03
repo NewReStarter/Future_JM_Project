@@ -11,6 +11,13 @@
     - [x] web integration
        - pack API in aws or compile to Binary exe and put inside the package.
   - Using Lyrebird api to clone voice / Build own deep learning network to tunning the voice.
+
+- Classification System
+  + Use the classfication System to predict if a candidate will be hired
+  + Model
+    * SVM
+    * CNN
+
 - CV
   - CV parsering
   - CV rating with ranking method (SVD or ..)
